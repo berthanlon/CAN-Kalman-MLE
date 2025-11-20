@@ -1,5 +1,5 @@
 # CAN-Kalman-MLE
-Code used in the two radar scenario for the paper 'Coordinate Ascent Neural Kalman-MLE for state estimation'. 
+Code used in the two radar scenario for the CAN-Kalman MLE paper [1]. The paper received the best paper runner-up award at the IEEE 35th International Workshop on Machine Learning for Signal Processing (MLSP).
 
 ## Link to paper
 
@@ -29,4 +29,4 @@ Code used in the two radar scenario for the paper 'Coordinate Ascent Neural Kalm
 
 This is the current version of this ever evolving repository. If any specific version/ data is required, or any questions or issues arise, feel free to contact Betti at bhanlon@liverpool.ac.uk
 
-
+[1] B. Hanlon and Á. F. García-Fernández, "Coordinate Ascent Neural Kalman-MLE for State Estimation," 2025 IEEE 35th International Workshop on Machine Learning for Signal Processing (MLSP), Istanbul, Turkiye, 2025, pp. 1-6, doi: 10.1109/MLSP62443.2025.11204271.
