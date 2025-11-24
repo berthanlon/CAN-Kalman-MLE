@@ -22,8 +22,6 @@ from F_nn import dynamic_preprocess_unknown, DynamicModelUnknown
 from UKF2 import run_ukf, compute_rmse
 import UKF2
 import UKF3
-import UKF_scaledh
-from MLP_nn import FunctionApproximator
 from QR_estimator import generate_estimates_max_lk
 
 torch.use_deterministic_algorithms(True)
@@ -314,7 +312,7 @@ state_histories_ukf3_known_fh_unknown_QR = run_ukf(
 ukf3_fh_unknown_QR_path = os.path.join(base_dir, "known_fh_unknown_QR_state_est.npy")
 np.save(ukf3_fh_unknown_QR_path, state_histories_ukf3_known_fh_unknown_QR)
 print(f"Saved UKF3 with known f,h but unknown Q,R estimates to: {ukf3_fh_unknown_QR_path}")
-
+'''
 ##############################################################
 # LOAD / COMPARE TO KNet (Optional)
 ##############################################################
@@ -329,7 +327,7 @@ except Exception as e:
 # Transpose KNet data from (n_sequences, state_dim, n_steps) to (n_sequences, n_steps, state_dim)
 knet_data = knet_data_init.transpose(0, 2, 1)
 print('KNet trajectory data shape:', knet_data.shape)
-
+'''
 ##############################################################
 # RMSE CALCULATIONS
 ##############################################################
@@ -339,7 +337,7 @@ rmse_ukf2_unknown_fhQR          = compute_rmse(ground_truth_np, state_histories_
 rmse_ukf3_known_fhQR            = compute_rmse(ground_truth_np, state_histories_ukf3_known_fhQR,            "UKF3 Known f,h,Q,R")
 rmse_ukf2_unknown_fh_known_QR   = compute_rmse(ground_truth_np, state_histories_ukf2_unknown_fh_known_QR,   "UKF2 Unknown f,h, known Q,R")
 rmse_ukf3_known_fh_unknown_QR   = compute_rmse(ground_truth_np, state_histories_ukf3_known_fh_unknown_QR,   "UKF3 Known f,h, unknown Q,R")
-rmse_knet                       = compute_rmse(ground_truth_np, knet_data,                                  "KalmanNet")
+#rmse_knet                       = compute_rmse(ground_truth_np, knet_data,                                  "KalmanNet")
 
 # Plot RMSE Over Time
 timesteps = np.arange(rmse_ukf2_unknown_fhQR.shape[0])
@@ -363,3 +361,4 @@ plot_save_path = os.path.join(base_dir, f'q{sigma_u}_r{sigma_r}_{n_steps}_step_f
 plt.savefig(plot_save_path, format='eps')
 plt.show()
 print(f"RMSE plot saved to {plot_save_path}")
+
