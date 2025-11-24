@@ -12,6 +12,8 @@ Code used in the two radar scenario for the CAN-Kalman MLE paper [1]. The paper 
 
 - **new_sim.py**: Monte-Carlo simulation generating training/CV/test sequences and two-radar range measurements.
 
+- **system_model** This file defines the SystemModel class, which sets up the state-space model and generates synthetic trajectories and measurement batches for training and testing the CAN-Kalman-MLE pipeline.
+ 
 - **F_nn_knownQR.py**: Neural dynamic model assuming known 𝑄; MLP with Mahalanobis loss
 
 - **F_nn.py**: This file contains the CAN-Kalman-MLE algorithm for the dynamic model. Neural dynamic model with unknown 𝑄; iteratively learning $f$ with $Q$ as detailed in 'CAN-Kalman-MLE'.
@@ -23,8 +25,6 @@ Code used in the two radar scenario for the CAN-Kalman MLE paper [1]. The paper 
 - **QR_estimator.py**: Maximum-likelihood estimator for 𝑄 and 𝑅 from prediction/measurement residuals (method as detailed in '[A comparison between Kalman-MLE and KalmanNet for state
  estimation with unknown noise parameters](https://livrepository.liverpool.ac.uk/3184477/1/A%20comparison%20between%20Kalman-MLE%20and%20KalmanNet.pdf)')
 
-- **system_model** This file defines the SystemModel class, which sets up the state-space model and generates synthetic trajectories and measurement batches for training and testing the CAN-Kalman-MLE pipeline.
- 
 - **UKF2.py**: UKF using trained PyTorch models in place of $𝑓_𝜃$ and $ℎ_𝜃$
 
 - **UKF3.py**: UKF with known or callable NumPy-based 𝑓 and ℎ
