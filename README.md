@@ -24,7 +24,7 @@ Code used in the two radar scenario for the CAN-Kalman MLE paper [1]. The paper 
  estimation with unknown noise parameters](https://livrepository.liverpool.ac.uk/3184477/1/A%20comparison%20between%20Kalman-MLE%20and%20KalmanNet.pdf)')
 
 - **system_model** This file defines the SystemModel class, which sets up the state-space model and generates synthetic trajectories and measurement batches for training and testing the CAN-Kalman-MLE pipeline.
-- 
+ 
 - **UKF2.py**: UKF using trained PyTorch models in place of $𝑓_𝜃$ and $ℎ_𝜃$
 
 - **UKF3.py**: UKF with known or callable NumPy-based 𝑓 and ℎ
